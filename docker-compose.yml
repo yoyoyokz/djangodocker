@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  pythontest:
+    image: pythontest
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: python ./mydjangoproject/manage.py runserver 0.0.0.0:8080
+    ports:
+      - 8080:8080
+    volumes: 
+      - .:/app
